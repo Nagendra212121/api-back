@@ -18,7 +18,14 @@ exports.createTransaction = async(req,res)=>
             status:'Success',
             NewTransaction
         });}
-        else throw "order not accepted"
+        else
+        {
+            const unsuccessfullTransactiion=await Transactions.create({Customer_Name,Product,Quantity,Status:"Cancelled",productID:product._id});
+            res.status(200).json({
+            status:'Success',
+            unsuccessfullTransactiion
+        });
+        }
     }
     catch(err)
     {
