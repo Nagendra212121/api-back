@@ -4,7 +4,7 @@ const ProductSchema= new mongoose.Schema({
         type:String,
         required:[true,"product Name is Mandatory"]
     },
-    In_Stock{
+    InStock:{
         type:Number,
         required:[true,"InStock value is Required"]
     },
@@ -13,5 +13,5 @@ const ProductSchema= new mongoose.Schema({
         required:[true,"warehouse name is required"]
     }
 })
-const Products=mongoose.model(Products,ProductSchema)
+const Products=mongoose.model("Products",ProductSchema)
 module.exports=Products 
